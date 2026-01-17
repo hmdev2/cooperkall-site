@@ -1,3 +1,5 @@
+import logo from '../resources/images/logo_cooperkall_sem_nome-transparentbg.png';
+
 export const Footer = () => {
     return (
         <footer className="bg-[#0f111a] text-white pt-24 pb-12">
@@ -6,7 +8,11 @@ export const Footer = () => {
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center space-x-2 mb-8">
                             <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">C</span>
+                                <img 
+                                    src={logo} 
+                                    className='w-full h-full object-contain' 
+                                    alt="Logo Cooperkall" 
+                                />
                             </div>
                             <span className="text-2xl font-black tracking-tighter uppercase">COOPERKALL</span>
                         </div>

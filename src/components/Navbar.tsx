@@ -17,7 +17,8 @@ export const Navbar = () => {
                         <img 
                             src={logo} 
                             className='w-full h-full object-contain' 
-                            alt="Logo Cooperkall" />
+                            alt="Logo Cooperkall" 
+                        />
                     </div>
                     <span className="text-2xl font-black tracking-tighter text-primary uppercase">COOPERKALL</span>
                 </div>
