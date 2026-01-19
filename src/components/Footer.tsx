@@ -20,9 +20,15 @@ export const Footer = () => {
                             Transformando pontos de venda em centros de lucro através de tecnologia, logística e pessoas apaixonadas por execução.
                         </p>
                         <div className="flex space-x-6 mt-10">
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl"><i className="fab fa-linkedin"></i></a>
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl"><i className="fab fa-instagram"></i></a>
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl"><i className="fab fa-youtube"></i></a>
+                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl">
+                                <i className="fab fa-linkedin" />
+                            </a>
+                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl">
+                                <i className="fab fa-instagram" />
+                            </a>
+                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl">
+                                <i className="fab fa-youtube" />
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -44,7 +50,9 @@ export const Footer = () => {
                         </ul>
                     </div> */}
                 </div>
-                <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+                <div 
+                    className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm"
+                >
                     <p>&copy; 2026 Cooperkall. {/* CNPJ: 00.000.000/0001-00 */}</p>
                     <p className="mt-4 md:mt-0 italic">Criado para Alta Performance no Varejo.</p>
                 </div>

@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-
   --primary: #2435a8;
   --accent: #b69a29;
   --bg-light: #eaeaeb;
@@ -10,9 +8,7 @@
 }
 
 body {
-  margin: 0;
-  height: 100vh;
-
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-light);
   color: var(--text-dark);
   overflow-x: hidden;
@@ -24,93 +20,90 @@ body {
 .bg-accent { background-color: var(--accent); }
 .text-accent { color: var(--accent); }
 
+.border-accent { border-color: var(--accent);}
+
 .hero-gradient {
-    background: linear-gradient(135deg, #2435a8 0%, #1a277a 100%);
+  background: linear-gradient(135deg, #2435a8 0%, #1a277a 100%);
 }
 
 .page-content {
-    display: none;
-    animation: fadeIn 0.4s ease-out forwards;
-}
-
-.page-content.active {
-    display: block;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .nav-link {
-    position: relative;
-    cursor: pointer;
-    font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent);
-    transition: width 0.3s;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s;
 }
 
 .nav-link.active::after, .nav-link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .glass-card {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
 .btn-gold {
-    background-color: var(--accent);
-    color: white;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  background-color: var(--accent);
+  color: white;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-gold:hover {
-    background-color: #967e21;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(182, 154, 41, 0.3);
+  background-color: #967e21;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(182, 154, 41, 0.3);
 }
 
 .section-title {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 .section-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 50px;
-    height: 4px;
-    background: var(--accent);
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 4px;
+  background: var(--accent);
 }
 
 .floating {
-    animation: floating 3s ease-in-out infinite;
+  animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }

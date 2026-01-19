@@ -2,10 +2,23 @@ import { Outlet } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 
-function DefaultLayout() {
+type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
+
+interface DefaultLayoutProps {
+  activePage: pages;
+  setActivePage: (page: pages) => void;
+};
+
+function DefaultLayout({
+  activePage,
+  setActivePage,
+}: DefaultLayoutProps) {
   return (
     <>
-      <Navbar />
+      <Navbar 
+        activePage={activePage}
+        setActivePage={setActivePage}
+      />
       <main className='pt-16'>
         <Outlet />
       </main>

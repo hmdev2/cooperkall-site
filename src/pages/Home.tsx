@@ -9,10 +9,21 @@ import {
 import logoAtakadao from '../resources/images/logos_empresas_parceiras/atacadao-seeklogo.png';
 import logoAtakarejo from '../resources/images/logos_empresas_parceiras/atakarejo_logo.jpeg';
 import logoAssaiAtacadista from '../resources/images/logos_empresas_parceiras/assai-atacadista-logo.png';
+import { useNavigate } from 'react-router-dom';
 
-export const Home = () => {
+type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
+
+interface HomeProps {
+    setActivePage: (page: pages) => void;
+};
+
+export const Home = ({
+    setActivePage,
+}: HomeProps) => {
+    const navigate = useNavigate();
+
     return (
-        <div id="page-home" className="page-content active">
+        <div className="page-content">
             <section className="hero-gradient py-28 md:pt-8 md:pb-50 px-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20"></div>
                 <div className="container mx-auto flex flex-col md:flex-row items-center relative z-10">
@@ -28,7 +39,10 @@ export const Home = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                             <button 
-                                // onclick="navigateTo('servicos')" 
+                                onClick={() => {
+                                    navigate('services');
+                                    setActivePage('services');
+                                }} 
                                 className="btn-gold px-10 py-5 rounded-xl font-bold text-lg"
                             >
                                     Impulsionar Minhas Vendas
@@ -123,7 +137,10 @@ export const Home = () => {
                 <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-white">
                     <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-0">Quer saber como está sua execução hoje?</h3>
                     <button 
-                        // onclick="navigateTo('contato')" 
+                        onClick={() => {
+                            navigate('contacts');
+                            setActivePage('contacts');
+                        }}
                         className="btn-gold px-10 py-4 rounded-xl font-bold text-lg"
                     >
                         Solicitar Auditoria
