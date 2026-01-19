@@ -1,4 +1,4 @@
-import logo from '../resources/images/logo_cooperkall_sem_nome-transparentbg.png';
+import logo from '../resources/images/logos_cooperkall/logo_cooperkall_sem_nome-transparentbg.png';
 
 export const Footer = () => {
     return (
@@ -45,7 +45,7 @@ export const Footer = () => {
                     </div> */}
                 </div>
                 <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
-                    <p>&copy; 2024 Cooperkall Inteligência de Trade. CNPJ: 00.000.000/0001-00</p>
+                    <p>&copy; 2026 Cooperkall. {/* CNPJ: 00.000.000/0001-00 */}</p>
                     <p className="mt-4 md:mt-0 italic">Criado para Alta Performance no Varejo.</p>
                 </div>
             </div>

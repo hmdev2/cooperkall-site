@@ -6,6 +6,10 @@ import {
     faPills
 } from '@fortawesome/free-solid-svg-icons';
 
+import logoAtakadao from '../resources/images/logos_empresas_parceiras/atacadao-seeklogo.png';
+import logoAtakarejo from '../resources/images/logos_empresas_parceiras/atakarejo_logo.jpeg';
+import logoAssaiAtacadista from '../resources/images/logos_empresas_parceiras/assai-atacadista-logo.png';
+
 export const Home = () => {
     return (
         <div id="page-home" className="page-content active">
@@ -13,7 +17,9 @@ export const Home = () => {
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20"></div>
                 <div className="container mx-auto flex flex-col md:flex-row items-center relative z-10">
                     <div className="md:w-3/5 text-white">
-                        <span className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-accent/30">Líder em Execução de Varejo</span>
+                        <span className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-accent/30">
+                            +1100 municípios — Bahia e interior de SP
+                        </span>
                         <h1 className="text-5xl md:text-7xl font-black leading-[1.1] mb-8">
                             Sua marca não pode ser apenas <span className="text-accent italic">mais uma</span> na prateleira.
                         </h1>
@@ -29,11 +35,32 @@ export const Home = () => {
                                 </button>
                             <div className="flex items-center space-x-3 text-white/80">
                                 <div className="flex -space-x-2">
-                                    <div className="w-10 h-10 rounded-full border-2 border-primary bg-gray-300"></div>
-                                    <div className="w-10 h-10 rounded-full border-2 border-primary bg-gray-400"></div>
-                                    <div className="w-10 h-10 rounded-full border-2 border-primary bg-gray-500"></div>
+                                    <div className="w-10 h-10 rounded-full border-2 border-primary bg-white overflow-hidden p-1">
+                                        <img 
+                                            src={logoAtakadao} 
+                                            alt="logo Atakadão"
+                                            className='w-full h-full object-cover'
+                                        />
+                                    </div>
+                                    <div className="w-10 h-10 rounded-full border-2 border-primary bg-gray-400 overflow-hidden">
+                                        <img 
+                                            src={logoAtakarejo} 
+                                            alt="logo atakarejo"
+                                            className='w-full h-full object-cover'
+                                        />
+                                    </div>
+                                    <div className="w-10 h-10 rounded-full border-2 border-primary bg-gray-500 overflow-hidden">
+                                        <img 
+                                            src={logoAssaiAtacadista} 
+                                            alt="logo assaí atacadista"
+                                            className='w-full h-full object-cover'
+                                        />
+                                    </div>
+                                    <div className="w-4 h-4 rounded-full ">
+                                        <p className="font-medium ml-3 mt-1">...</p>
+                                    </div>
                                 </div>
-                                <p className="text-sm font-medium">+200 indústrias confiam</p>
+                                <p className="text-sm font-medium">As maiores indústrias confiam</p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +79,7 @@ export const Home = () => {
                                 </div>
                                 <div>
                                     <p className="text-gray-400 text-xs font-bold uppercase tracking-tighter">Aumento de Visibilidade</p>
-                                    <p className="text-primary text-2xl font-black">+32% em 90 dias</p>
+                                    <p className="text-primary text-2xl font-black">+72% em 90 dias</p>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +126,7 @@ export const Home = () => {
                         // onclick="navigateTo('contato')" 
                         className="btn-gold px-10 py-4 rounded-xl font-bold text-lg"
                     >
-                        Solicitar Auditoria Gratuita
+                        Solicitar Auditoria
                     </button>
                 </div>
             </section>

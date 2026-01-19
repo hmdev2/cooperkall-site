@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../resources/images/logo_cooperkall_sem_nome-transparentbg.png';
+import logo from '../resources/images/logos_cooperkall/logo_cooperkall_sem_nome-transparentbg.png';
 
 export const Navbar = () => {
     const navigate = useNavigate();
