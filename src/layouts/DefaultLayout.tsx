@@ -22,7 +22,9 @@ function DefaultLayout({
       <main className='pt-16'>
         <Outlet />
       </main>
-      <Footer />
+      <Footer 
+        setActivePage={setActivePage}
+      />
     </>
   )
 }

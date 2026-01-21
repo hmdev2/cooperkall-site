@@ -1,3 +1,5 @@
+import imageAbout from '../resources/images/Images_cooperkall/image_page_about.jpeg';
+
 export const About = () => {
     return (
         <div id="page-sobre" className="page-content">
@@ -14,11 +16,11 @@ export const About = () => {
                             </p>
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                                    <p className="text-primary font-black text-3xl mb-1">99.2%</p>
+                                    <p className="text-primary font-black text-3xl mb-1">N%</p>
                                     <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">SLA de Entrega</p>
                                 </div>
                                 <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                                    <p className="text-primary font-black text-3xl mb-1">+15k</p>
+                                    <p className="text-primary font-black text-3xl mb-1">+N</p>
                                     <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">Pontos de Venda</p>
                                 </div>
                             </div>
@@ -26,7 +28,7 @@ export const About = () => {
                         <div className="md:w-1/2">
                             <div className="relative p-4">
                                 <div className="absolute inset-0 bg-accent rounded-3xl rotate-3"></div>
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" className="relative z-10 rounded-3xl shadow-2xl" alt="Time Cooperkall" />
+                                <img src={imageAbout} className="relative z-10 rounded-3xl shadow-2xl" alt="Time Cooperkall" />
                             </div>
                         </div>
                     </div>
@@ -48,13 +50,13 @@ export const About = () => {
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-xl">2</div>
-                            <h4 className="font-bold text-lg mb-2">Setup Logístico</h4>
-                            <p className="text-gray-500 text-sm">Seu material entra em nossos CDs e é roteirizado com inteligência geográfica.</p>
+                            <h4 className="font-bold text-lg mb-2">Engenharia de Rotas</h4>
+                            <p className="text-gray-500 text-sm">Aplicamos inteligência geográfica com frequência de até 6x por semana e direcionamos o time aos PDVs com maior potencial de ganho.</p>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-xl">3</div>
                             <h4 className="font-bold text-lg mb-2">Ação em Campo</h4>
-                            <p className="text-gray-500 text-sm">Equipe treinada executa a positivação com reporte fotográfico instantâneo.</p>
+                            <p className="text-gray-500 text-sm">Atuamos com foco em abastecimento e planograma, garantindo visibilidade e maior impacto no ponto de venda.</p>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-xl">4</div>

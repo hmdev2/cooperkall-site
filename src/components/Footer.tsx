@@ -1,6 +1,20 @@
+import { Link } from 'react-router-dom';
 import logo from '../resources/images/logos_cooperkall/logo_cooperkall_sem_nome-transparentbg.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faLinkedin,
+    faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
-export const Footer = () => {
+type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
+
+interface FooterProps {
+    setActivePage: (page: pages) => void;
+};
+
+export const Footer = ({
+    setActivePage
+}: FooterProps) => {
     return (
         <footer className="bg-[#0f111a] text-white pt-24 pb-12">
             <div className="container mx-auto px-6">
@@ -20,24 +34,62 @@ export const Footer = () => {
                             Transformando pontos de venda em centros de lucro através de tecnologia, logística e pessoas apaixonadas por execução.
                         </p>
                         <div className="flex space-x-6 mt-10">
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl">
-                                <i className="fab fa-linkedin" />
+                            <a 
+                                href="http://linkedin.com/in/cooperkall-merchandising-83a612374" className="text-gray-500 hover:text-accent transition text-2xl"
+                            >
+                                <FontAwesomeIcon icon={faLinkedin} />
                             </a>
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl">
-                                <i className="fab fa-instagram" />
-                            </a>
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl">
-                                <i className="fab fa-youtube" />
+                            <a 
+                                href="https://www.instagram.com/cooperkall/" 
+                                className="text-gray-500 hover:text-accent transition text-2xl"
+                            >
+                                <FontAwesomeIcon icon={faInstagram} />
                             </a>
                         </div>
                     </div>
                     <div>
                         <h4 className="text-white font-bold mb-8 text-xl">Navegação</h4>
                         <ul className="text-gray-500 space-y-4">
-                            <li className="hover:text-accent cursor-pointer transition">Início</li>
-                            <li className="hover:text-accent cursor-pointer transition">A Agência</li>
-                            <li className="hover:text-accent cursor-pointer transition">Nossos Serviços</li>
-                            <li className="hover:text-accent cursor-pointer transition">Blog & Insights</li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/'}
+                                    onClick={() => {
+                                        setActivePage('home');
+                                    }}
+                                >
+                                    Início
+                                </Link>
+                            </li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/about'}
+                                    onClick={() => {
+                                        setActivePage('about');
+                                    }}
+                                >
+                                    A Agência
+                                </Link>
+                            </li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/services'}
+                                    onClick={() => {
+                                        setActivePage('services');
+                                    }}
+                                >
+                                    Nossos Serviços
+                                </Link>
+                            </li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/blog'}
+                                    onClick={() => {
+                                        setActivePage('blog');
+                                    }}
+                                >
+                                    Blog & Insights
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     {/* <div>
