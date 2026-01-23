@@ -1,6 +1,39 @@
+import { Link } from 'react-router-dom';
 import logo from '../resources/images/logos_cooperkall/logo_cooperkall_sem_nome-transparentbg.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faLinkedin,
+    faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
-export const Footer = () => {
+type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
+
+interface FooterProps {
+    setActivePage: (page: pages) => void;
+};
+
+export const Footer = ({
+    setActivePage
+}: FooterProps) => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_PHONE;
+
+    const handleClick = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const phone = phoneNumber;
+
+        const message = `*INTERESSE EM OPORTUNIDADE - TIME COOPERKALL*
+
+Olá! Vim através do site e gostaria de me candidatar a uma oportunidade no time de elite da Cooperkall. 
+Tenho interesse em atuar na execução de Trade Marketing e gostaria de saber como posso enviar meu currículo para avaliação. 
+
+Fico no aguardo das instruções para os próximos passos!`;
+
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, '_blank');
+    };
+
     return (
         <footer className="bg-[#0f111a] text-white pt-24 pb-12">
             <div className="container mx-auto px-6">
@@ -20,32 +53,79 @@ export const Footer = () => {
                             Transformando pontos de venda em centros de lucro através de tecnologia, logística e pessoas apaixonadas por execução.
                         </p>
                         <div className="flex space-x-6 mt-10">
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl"><i className="fab fa-linkedin"></i></a>
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl"><i className="fab fa-instagram"></i></a>
-                            <a href="#" className="text-gray-500 hover:text-accent transition text-2xl"><i className="fab fa-youtube"></i></a>
+                            <a 
+                                href="http://linkedin.com/in/cooperkall-merchandising-83a612374" className="text-gray-500 hover:text-accent transition text-2xl"
+                            >
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
+                            <a 
+                                href="https://www.instagram.com/cooperkall/" 
+                                className="text-gray-500 hover:text-accent transition text-2xl"
+                            >
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </a>
                         </div>
                     </div>
                     <div>
                         <h4 className="text-white font-bold mb-8 text-xl">Navegação</h4>
                         <ul className="text-gray-500 space-y-4">
-                            <li className="hover:text-accent cursor-pointer transition">Início</li>
-                            <li className="hover:text-accent cursor-pointer transition">A Agência</li>
-                            <li className="hover:text-accent cursor-pointer transition">Nossos Serviços</li>
-                            <li className="hover:text-accent cursor-pointer transition">Blog & Insights</li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/'}
+                                    onClick={() => {
+                                        setActivePage('home');
+                                    }}
+                                >
+                                    Início
+                                </Link>
+                            </li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/about'}
+                                    onClick={() => {
+                                        setActivePage('about');
+                                    }}
+                                >
+                                    A Agência
+                                </Link>
+                            </li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/services'}
+                                    onClick={() => {
+                                        setActivePage('services');
+                                    }}
+                                >
+                                    Nossos Serviços
+                                </Link>
+                            </li>
+                            <li className="hover:text-accent cursor-pointer transition">
+                                <Link
+                                    to={'/contacts'}
+                                    onClick={() => {
+                                        setActivePage('contacts');
+                                    }}
+                                >
+                                    Contato
+                                </Link>
+                            </li>
                         </ul>
                     </div>
-                    {/* <div>
+                    <div>
                         <h4 className="text-white font-bold mb-8 text-xl">Recursos</h4>
                         <ul className="text-gray-500 space-y-4">
-                            <li className="hover:text-accent cursor-pointer transition">Trabalhe Conosco</li>
-                            <li className="hover:text-accent cursor-pointer transition">Portal do Cliente</li>
-                            <li className="hover:text-accent cursor-pointer transition">Compliance</li>
-                            <li className="hover:text-accent cursor-pointer transition">Privacidade</li>
+                            <li 
+                                onClick={handleClick} 
+                                className="hover:text-accent cursor-pointer transition">
+                                    Trabalhe Conosco
+                                </li>
                         </ul>
-                    </div> */}
+                    </div>
                 </div>
-                <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
-                    <p>&copy; 2026 Cooperkall. {/* CNPJ: 00.000.000/0001-00 */}</p>
+                <div 
+                    className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm"
+                >
+                    <p>&copy; 2026 Cooperkall. CNPJ: 55.509.893/0001-97</p>
                     <p className="mt-4 md:mt-0 italic">Criado para Alta Performance no Varejo.</p>
                 </div>
             </div>

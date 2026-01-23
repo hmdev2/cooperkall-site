@@ -1,7 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../resources/images/logos_cooperkall/logo_cooperkall_sem_nome-transparentbg.png';
 
-export const Navbar = () => {
+type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
+
+interface NavbarProps {
+    activePage: pages;
+    setActivePage: (page: pages) => void;
+}
+
+export const Navbar = ({
+    activePage,
+    setActivePage,
+}: NavbarProps) => {
     const navigate = useNavigate();
 
     return (
@@ -11,6 +21,7 @@ export const Navbar = () => {
                     className="flex items-center space-x-2 cursor-pointer" 
                     onClick={() => {
                         navigate('/');
+                        setActivePage('home');
                     }}
                 >
                     <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg">
@@ -24,16 +35,77 @@ export const Navbar = () => {
                 </div>
                 
                 <div className="hidden md:flex space-x-10">
-                    <Link to={'/'}>
-                        <span className="nav-link text-gray-700 active" id="nav-home">Home</span>
+                    <Link 
+                        onClick={() => {
+                            setActivePage('home');
+                        }}
+                        to={'/'}
+                    >
+                        <span 
+                            className={`nav-link text-gray-700 ${activePage === 'home'? 'active' : ''}`} 
+                        >
+                            Home
+                        </span>
                     </Link>
-                    <span className="nav-link text-gray-700" id="nav-sobre">A Agência</span>
-                    <span className="nav-link text-gray-700" id="nav-servicos">O que fazemos</span>
-                    <span className="nav-link text-gray-700" id="nav-blog">Insights</span>
-                    <span className="nav-link text-gray-700" id="nav-contato">Contato</span>
+                    <Link 
+                        onClick={() => {
+                            setActivePage('about');
+                        }} 
+                        to={'/about'}
+                    >
+                        <span 
+                            className={`nav-link text-gray-700 ${activePage === 'about'? 'active' : ''}`} 
+                        >
+                            A Agência
+                        </span>
+                    </Link>
+                    <Link 
+                        onClick={() => {
+                            setActivePage('services');
+                        }} 
+                        to={'/services'}
+                    >
+                        <span 
+                            className={`nav-link text-gray-700 ${activePage === 'services'? 'active' : ''}`} 
+                        >
+                            O que fazemos
+                        </span>
+                    </Link>
+                    {/* <Link 
+                        onClick={() => {
+                            setActivePage('blog');
+                        }} 
+                        to={'/blog'}
+                    >
+                        <span 
+                            className={`nav-link text-gray-700 ${activePage === 'blog'? 'active' : ''}`} 
+                        >
+                            Insights
+                        </span>
+                    </Link> */}
+                    <Link 
+                        onClick={() => {
+                            setActivePage('contacts');
+                        }} 
+                        to={'/contacts'}
+                    >
+                        <span 
+                            className={`nav-link text-gray-700 ${activePage === 'contacts'? 'active' : ''}`} 
+                        >
+                            Contato
+                        </span>
+                    </Link>
                 </div>
 
-                <button className="btn-gold px-7 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide">Solicitar Diagnóstico</button>
+                <button 
+                    onClick={() => {
+                        navigate('contacts');
+                        setActivePage('contacts');
+                    }}
+                    className="btn-gold px-7 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide"
+                >
+                    Solicitar Diagnóstico
+                </button>
             </div>
         </nav>
     );
