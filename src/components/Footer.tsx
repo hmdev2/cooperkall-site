@@ -15,6 +15,25 @@ interface FooterProps {
 export const Footer = ({
     setActivePage
 }: FooterProps) => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_PHONE;
+
+    const handleClick = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const phone = phoneNumber;
+
+        const message = `*INTERESSE EM OPORTUNIDADE - TIME COOPERKALL*
+
+Olá! Vim através do site e gostaria de me candidatar a uma oportunidade no time de elite da Cooperkall. 
+Tenho interesse em atuar na execução de Trade Marketing e gostaria de saber como posso enviar meu currículo para avaliação. 
+
+Fico no aguardo das instruções para os próximos passos!`;
+
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, '_blank');
+    };
+
     return (
         <footer className="bg-[#0f111a] text-white pt-24 pb-12">
             <div className="container mx-auto px-6">
@@ -82,30 +101,31 @@ export const Footer = ({
                             </li>
                             <li className="hover:text-accent cursor-pointer transition">
                                 <Link
-                                    to={'/blog'}
+                                    to={'/contacts'}
                                     onClick={() => {
-                                        setActivePage('blog');
+                                        setActivePage('contacts');
                                     }}
                                 >
-                                    Blog & Insights
+                                    Contato
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    {/* <div>
+                    <div>
                         <h4 className="text-white font-bold mb-8 text-xl">Recursos</h4>
                         <ul className="text-gray-500 space-y-4">
-                            <li className="hover:text-accent cursor-pointer transition">Trabalhe Conosco</li>
-                            <li className="hover:text-accent cursor-pointer transition">Portal do Cliente</li>
-                            <li className="hover:text-accent cursor-pointer transition">Compliance</li>
-                            <li className="hover:text-accent cursor-pointer transition">Privacidade</li>
+                            <li 
+                                onClick={handleClick} 
+                                className="hover:text-accent cursor-pointer transition">
+                                    Trabalhe Conosco
+                                </li>
                         </ul>
-                    </div> */}
+                    </div>
                 </div>
                 <div 
                     className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm"
                 >
-                    <p>&copy; 2026 Cooperkall. {/* CNPJ: 00.000.000/0001-00 */}</p>
+                    <p>&copy; 2026 Cooperkall. CNPJ: 55.509.893/0001-97</p>
                     <p className="mt-4 md:mt-0 italic">Criado para Alta Performance no Varejo.</p>
                 </div>
             </div>

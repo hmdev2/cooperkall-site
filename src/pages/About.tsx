@@ -1,6 +1,19 @@
+import { useEffect } from 'react';
 import imageAbout from '../resources/images/Images_cooperkall/image_page_about.jpeg';
+import type { pages } from '../types/Pages';
 
-export const About = () => {
+
+interface AboutProps {
+    setActivePage: (page: pages) => void;
+}
+
+export const About = ({setActivePage}: AboutProps) => {
+
+    useEffect(() => {
+            setActivePage('about');
+        }, [setActivePage]);
+    
+
     return (
         <div id="page-sobre" className="page-content">
             <section className="py-14 px-6 bg-white">
@@ -16,11 +29,11 @@ export const About = () => {
                             </p>
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                                    <p className="text-primary font-black text-3xl mb-1">N%</p>
+                                    <p className="text-primary font-black text-3xl mb-1">95.3%</p>
                                     <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">SLA de Entrega</p>
                                 </div>
                                 <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-accent">
-                                    <p className="text-primary font-black text-3xl mb-1">+N</p>
+                                    <p className="text-primary font-black text-3xl mb-1">+900</p>
                                     <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">Pontos de Venda</p>
                                 </div>
                             </div>

@@ -7,8 +7,9 @@ import {
     faCheck,
     faUserTie
 } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from "react";
+import type { pages } from '../types/Pages';
 
-type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
 
 interface ServicesProps {
     setActivePage: (page: pages) => void;
@@ -19,8 +20,11 @@ export const Services = ({
 }: ServicesProps) => {
     const navigate = useNavigate();
 
-    return (
+    useEffect(() => {
+        setActivePage('services');
+    }, [setActivePage]);
 
+    return (
         <div id="page-servicos" className="page-content">
             <section className="py-14 px-6">
                 <div className="container mx-auto">
@@ -61,7 +65,7 @@ export const Services = ({
                             </ul>
                             <button 
                                 onClick={() => {
-                                    navigate('contacts');
+                                    navigate('/contacts');
                                     setActivePage('contacts');
                                 }} 
                                 className="text-primary font-black flex items-center group-hover:translate-x-2 transition"
@@ -105,7 +109,7 @@ export const Services = ({
                             </ul>
                             <button 
                                 onClick={() => {
-                                    navigate('contacts');
+                                    navigate('/contacts');
                                     setActivePage('contacts');
                                 }} 
                                 className="text-primary font-black flex items-center group-hover:translate-x-2 transition"
@@ -148,7 +152,7 @@ export const Services = ({
                             </ul>
                             <button 
                                 onClick={() => {
-                                    navigate('contacts');
+                                    navigate('/contacts');
                                     setActivePage('contacts');
                                 }} 
                                 className="text-primary font-black flex items-center group-hover:translate-x-2 transition"
@@ -164,18 +168,38 @@ export const Services = ({
                 </div>
             </section>
 
-            <section className="py-24 bg-primary text-white px-6">
-                <div className="container mx-auto text-center max-w-4xl">
-                    <i className="fas fa-quote-left text-accent text-5xl mb-8"></i>
-                    <p className="text-2xl md:text-3xl font-light italic leading-relaxed mb-10">
-                        "Depois que integramos a nossa logística com a execução da Cooperkall, nossa ruptura caiu de 14% para 2.8% em menos de um trimestre. É a agência mais focada em dados que já trabalhamos."
-                    </p>
-                    <div className="flex items-center justify-center space-x-4">
-                        <div className="w-16 h-16 rounded-full bg-gray-400"></div>
-                        <div className="text-left">
-                            <p className="font-bold text-xl">Diretor de Trade Marketing</p>
-                            <p className="text-blue-300 text-sm italic">Gigante do Setor de Bebidas</p>
+            <section className="py-24 bg-primary relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-[3rem] p-12 md:p-20 text-center">
+                        <span className="inline-block bg-accent text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest mb-8 shadow-lg">Nossa Promessa Inegociável</span>
+                        <h2 className="text-4xl md:text-6xl font-black text-white mb-10 leading-[1.1]">Onde a sua estratégia encontra a <span className="text-accent">perfeição da gôndola.</span></h2>
+                        <p className="text-blue-100 text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                            Não entregamos apenas promotores. Entregamos a certeza de que seu produto estará <strong className="text-white">disponível, precificado e destacado</strong> exatamente onde o seu cliente decide comprar. 
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-8 text-white">
+                            <div className="p-6">
+                                <p className="text-accent font-black text-4xl mb-2">Zéro</p>
+                                <p className="text-gray-300 text-xs uppercase tracking-tighter">Complacência com Ruptura</p>
+                            </div>
+                            <div className="p-6 border-x border-white/10">
+                                <p className="text-accent font-black text-4xl mb-2">100%</p>
+                                <p className="text-gray-300 text-xs uppercase tracking-tighter">Foco em Sell-out Real</p>
+                            </div>
+                            <div className="p-6">
+                                <p className="text-accent font-black text-4xl mb-2">Total</p>
+                                <p className="text-gray-300 text-xs uppercase tracking-tighter">Transparência em Dados</p>
+                            </div>
                         </div>
+                        <button
+                            onClick={() => {
+                                navigate('/contacts');
+                                setActivePage('contacts');
+                            }}
+                            className="btn-gold mt-16 px-12 py-5 rounded-2xl font-black text-xl shadow-2xl"
+                        >
+                            Assumir o Controle do PDV
+                        </button>
                     </div>
                 </div>
             </section>

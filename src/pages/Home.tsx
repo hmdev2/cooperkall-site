@@ -10,8 +10,8 @@ import logoAtakadao from '../resources/images/logos_empresas_parceiras/atacadao-
 import logoAtakarejo from '../resources/images/logos_empresas_parceiras/atakarejo_logo.jpeg';
 import logoAssaiAtacadista from '../resources/images/logos_empresas_parceiras/assai-atacadista-logo.png';
 import { useNavigate } from 'react-router-dom';
-
-type pages = 'home' | 'about' | 'services' | 'blog' | 'contacts';
+import { useEffect } from 'react';
+import type { pages } from '../types/Pages';
 
 interface HomeProps {
     setActivePage: (page: pages) => void;
@@ -21,6 +21,10 @@ export const Home = ({
     setActivePage,
 }: HomeProps) => {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setActivePage('home');
+    }, [setActivePage]);
 
     return (
         <div className="page-content">

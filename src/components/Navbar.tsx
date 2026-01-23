@@ -71,7 +71,7 @@ export const Navbar = ({
                             O que fazemos
                         </span>
                     </Link>
-                    <Link 
+                    {/* <Link 
                         onClick={() => {
                             setActivePage('blog');
                         }} 
@@ -82,7 +82,7 @@ export const Navbar = ({
                         >
                             Insights
                         </span>
-                    </Link>
+                    </Link> */}
                     <Link 
                         onClick={() => {
                             setActivePage('contacts');
