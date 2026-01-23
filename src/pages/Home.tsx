@@ -84,10 +84,8 @@ export const Home = ({
                     </div>
                     <div className="md:w-2/5 mt-16 md:mt-0 relative">
                         <div className="floating">
-                            <img 
-                                src="https://images.unsplash.com/photo-1580674271209-40b49a5a0571?auto=format&fit=crop&q=80&w=800" 
-                                className="rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] border-4 border-white/10" 
-                                alt="Trade Marketing" 
+                            <div 
+                                className="rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] border-4 border-white/10 p-3" 
                             />
                         </div>
                         <div className="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-2xl hidden lg:block">
