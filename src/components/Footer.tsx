@@ -17,17 +17,27 @@ export const Footer = ({
 }: FooterProps) => {
     const phoneNumber = import.meta.env.VITE_WHATSAPP_PHONE;
 
-    const handleClick = (e: React.FormEvent) => {
+    const handleClick = (e: React.FormEvent, option: 'work' | 'partner') => {
         e.preventDefault();
 
         const phone = phoneNumber;
 
-        const message = `*INTERESSE EM OPORTUNIDADE - TIME COOPERKALL*
+        const message = option === 'work' ? `*INTERESSE EM OPORTUNIDADE - TIME COOPERKALL*
 
 Olá! Vim através do site e gostaria de me candidatar a uma oportunidade no time de elite da Cooperkall. 
 Tenho interesse em atuar na execução de Trade Marketing e gostaria de saber como posso enviar meu currículo para avaliação. 
 
-Fico no aguardo das instruções para os próximos passos!`;
+Fico no aguardo das instruções para os próximos passos!` :
+
+`*INTERESSE EM PARCERIA - COOPERKALL*
+
+Olá, time Cooperkall! Vim pelo site e tenho interesse em explorar uma *parceria estratégica* com vocês.
+Acredito que juntos podemos potencializar resultados, unindo nossa atuação com a execução de campo, inteligência de dados e presença no PDV que a Cooperkall entrega.
+
+Gostaria de saber como podemos *iniciar essa conversa* e quais são os próximos passos para avaliar oportunidades de parceria.
+
+Aguardo um retorno para alinharmos detalhes!
+`;
 
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
@@ -115,10 +125,17 @@ Fico no aguardo das instruções para os próximos passos!`;
                         <h4 className="text-white font-bold mb-8 text-xl">Recursos</h4>
                         <ul className="text-gray-500 space-y-4">
                             <li 
-                                onClick={handleClick} 
-                                className="hover:text-accent cursor-pointer transition">
-                                    Trabalhe Conosco
-                                </li>
+                                onClick={(e) => handleClick(e, 'partner')} 
+                                className="hover:text-accent cursor-pointer transition"
+                            >
+                                Seja Nosso Parceiro
+                            </li>
+                            <li 
+                                onClick={(e) => handleClick(e, 'work')} 
+                                className="hover:text-accent cursor-pointer transition"
+                            >
+                                Trabalhe Conosco
+                            </li>
                         </ul>
                     </div>
                 </div>
